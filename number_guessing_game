@@ -1,0 +1,38 @@
+import random
+num = random.randint(1, 100)
+print ("Welcome to the number guessing game")
+
+def the_game():
+    def is_valid(s):
+            return s.isdigit() and 1 <= int(s) <= 100
+    while True : 
+        guess = input('Enter the number from 1 to 100')
+        if is_valid(guess) == False:
+            print ('Maybe we should still enter an integer from 1 to 100?')
+            continue
+        else:
+            user_guess = int(guess)
+            break
+
+    def check_guess (s):
+        if s < num :
+            print('Your number is less than the hidden number, try again')
+        elif s > num:
+            print("Your number is more than the hidden number, try again")
+        elif s == num :
+            print('You guessed it, congratulations!')
+    check_guess(user_guess)
+    
+the_game()
+            
+while True:
+    print('Wanna play again? "Yes" or "no"?')
+    answer = input()
+    if answer == 'Yes':
+        the_game()
+    elif answer == 'No':
+        break
+    break
+
+    
+print('Thanks for playing the number guessing game. See you again...')
