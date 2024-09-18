@@ -1,0 +1,8 @@
+list = [int(i) for i in range (1, int(input())+1)]
+k = int(input())
+while len(list) > 1:
+    for i in range (0,k-1):
+        list.append(list[0])
+        del(list[0])
+    del(list[0])
+print(list[0])
